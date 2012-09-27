@@ -66,7 +66,6 @@ module Guard
         cmd_parts << "bundle exec" if bundler?
         cmd_parts << "spin push"
         cmd_parts << paths.join(' ')
-        cmd_parts << "| grep failures | say -v cello"
         cmd_parts.join(' ')
       end
       
