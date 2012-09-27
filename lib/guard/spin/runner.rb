@@ -70,7 +70,7 @@ module Guard
       end
       
       def spin_push_options
-        options[:say] ? %Q{| perl -pe 'print STDERR' | grep ' failures' | perl -pe 's/^.*33m//g' | perl -pe 's/..$//g' | say -v #{options[:say]}} : ''
+        options[:say] ? %Q{| perl -pe 'print STDERR' | grep ' failure' | perl -pe 's/^.*3.m//g' | perl -pe 's/..$//g' | say -v #{options[:say]}} : ''
       end
 
       def spin_serve_command
