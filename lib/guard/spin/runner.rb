@@ -69,9 +69,9 @@ module Guard
         cmd_parts << "| grep failures | say -v cello"
         cmd_parts.join(' ')
       end
-
+      
       def spin_push_options
-        ''
+        options[:say] ? %Q{| perl -pe 'print STDERR' | grep ' failures' | perl -pe 's/^.*33m//g' | perl -pe 's/..$//g' | say -v cello} : ''
       end
 
       def spin_serve_command
